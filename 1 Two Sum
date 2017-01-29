@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {
+    
+    if(nums.length < 2) return [];
+    
+    var dict = {};
+    for(let i = 0; i < nums.length; i++){
+        let val = nums[i]
+        if(dict[val] !== undefined){
+            return [dict[val], i]
+        } else {
+            dict[target - val] = i;
+        }
+    }
+    return [];
+    
+};
